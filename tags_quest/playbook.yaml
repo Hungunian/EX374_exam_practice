@@ -1,0 +1,6 @@
+---
+ - name: adding tags in my tasks
+   hosts: all 
+   become: true
+   tasks:
+
