@@ -1,0 +1,9 @@
+users:
+   - name: vishal
+     group: developer
+   - name: vikas
+     group: manager 
+   - name: lalit 
+     group: manager
+   - name: nikhil 
+     group: developer 
