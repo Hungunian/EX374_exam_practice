@@ -1,0 +1,21 @@
+---
+- name: Copy content to a file in a directory using variables
+  hosts: localhost  # Change this to your target hosts, like 'web'
+  vars:
+    content: "This is the content of the file."  # Content to be copied into the file
+    file: "example.txt"                         # Name of the file
+    directory: "/tmp/example_dir"               # Directory to save the file in
+
+  tasks:
+    - name: Ensure the directory exists
+      file:
+        path: "{{ directory }}"
+        state: directory
+        mode: '0755'  # Set the directory permissions
+
+    - name: Copy content to file in the specified directory
+      copy:
+        content: "{{ content }}"
+        dest: "{{ directory }}/{{ file }}"
+      # 'become: yes' can be added if you need root privileges to write to the directory
+
